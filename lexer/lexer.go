@@ -13,6 +13,7 @@ func New(input string) *Lexer {
 }
 
 func (l *Lexer) readChar() {
+	// check for end of input
 	if l.readPosition >= len(l.input) {
 		l.ch = 0
 	} else {
