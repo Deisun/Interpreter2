@@ -24,6 +24,7 @@ const (
 	FUNCTION = "FUNCTION"
 	LET = "LET"
 )
+
 type TokenType string
 
 type Token struct {
