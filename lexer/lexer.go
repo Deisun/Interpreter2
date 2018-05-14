@@ -2,7 +2,6 @@ package lexer
 
 import (
 	"Interpreter2/token"
-	"encoding/xml"
 )
 
 type Lexer struct {
@@ -30,7 +29,7 @@ func (l *Lexer) readChar() {
 	l.readPosition += 1
 }
 
-func (l *Lexer) NextToken() token.Token {
+func (l *Lexer) nextToken() token.Token {
 	var tok token.Token
 
 	switch l.ch {
@@ -54,4 +53,11 @@ func (l *Lexer) NextToken() token.Token {
 		tok.Literal = ""
 		tok.Type = token.EOF
 	}
+
+	l.readChar()
+	return tok
+}
+
+func newToken(tokenType token.TokenType, ch byte) token.Token {
+	return token.Token{Type: tokenType, Literal: string(ch)}
 }
