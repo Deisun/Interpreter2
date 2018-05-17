@@ -33,7 +33,7 @@ func (l *Lexer) readChar() {
 }
 
 
-func (l *Lexer) nextToken() token.Token {
+func (l *Lexer) NextToken() token.Token {
 	var tok token.Token
 
 	l.skipWhitespace()
@@ -139,7 +139,6 @@ func (l *Lexer) readIdentifier() string {
 }
 
 
-
 func isDigit(ch byte) bool {
 	return '0' <= ch && ch <= '9'
 }
@@ -148,6 +147,7 @@ func isDigit(ch byte) bool {
 func isLetter(ch byte) bool {
 	return 'a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z' || ch == '_'
 }
+
 
 func (l *Lexer) peekChar() byte {
 	if l.readPosition >= len(l.input) {
