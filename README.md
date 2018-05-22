@@ -1,2 +1,2 @@
 # Interpreter2
-Go based interpreter for a language called Monkey.
+A Go based interpreter for a language called Monkey.
